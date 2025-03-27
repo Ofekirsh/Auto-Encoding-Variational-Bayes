@@ -1,5 +1,8 @@
 # Auto-Encoding-Variational-Bayes (VAE)
 
+<img src="images/vae_image.png" >
+
+
 This project implements the models proposed in [ Auto-Encoding Variational Bayes (VAE)](https://arxiv.org/abs/1312.6114)
 written by Diederik P Kingma and Max Welling.
 
