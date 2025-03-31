@@ -1,17 +1,13 @@
-"""Training procedure for NICE.
-"""
-
 import argparse
 import pickle
-
 import torch, torchvision
 from torchvision import transforms
 import numpy as np
 from VAE import Model
 
+
 def train(vae, trainloader, optimizer, epoch):
     vae.train()  # set to training mode
-    #TODO
     loss_epoch = 0
 
     for x, y in trainloader:
@@ -26,10 +22,10 @@ def train(vae, trainloader, optimizer, epoch):
     print(f"loss train {epoch} - {loss}")
     return loss
 
+
 def test(vae, testloader, filename, epoch=None):
     vae.eval()  # set to inference mode
     with torch.no_grad():
-        #TODO
         if epoch == None:
             samples = vae.sample(100)
             torchvision.utils.save_image(torchvision.utils.make_grid(samples),
@@ -84,7 +80,6 @@ def main(args):
     optimizer = torch.optim.Adam(
         vae.parameters(), lr=args.lr)
 
-    #TODO
     loss_batches_train = []
     loss_batches_test = []
     for epoch in range(args.epochs):
